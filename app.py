@@ -7,7 +7,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-# * Create
+# *CREATE
 user1 = User(name="Amit", age=25)
 user2 = User(name="Mobin", age=27)
 user3 = User(name="Santu", age=28)
@@ -19,8 +19,10 @@ user4 = User(name="Morgan", age=40)
 # session.commit() 
 
 
-# * Read
-users = session.query(User).all()
-print(users)
+# *READ
+# users = session.query(User).all()
+users = session.query(User).filter_by(id=7).all()
 for user in users:
     print(f"User ID : {user.id}, Name: {user.name}, Age: {user.age}")
+
+# *UPDATE
