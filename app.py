@@ -21,8 +21,14 @@ user4 = User(name="Morgan", age=40)
 
 # *READ
 # users = session.query(User).all()
-users = session.query(User).filter_by(id=7).all()
-for user in users:
-    print(f"User ID : {user.id}, Name: {user.name}, Age: {user.age}")
+user = session.query(User).filter_by(id=4).one_or_none()
+print(f"User ID : {user.id}, Name: {user.name}, Age: {user.age}")
 
 # *UPDATE
+user.age = 35
+print(f"Updated User ID : {user.id}, Name: {user.name}, Age: {user.age}")
+# session.commit() 
+
+# *DELETE
+session.delete(user)
+# session.commit()
