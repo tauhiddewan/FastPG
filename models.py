@@ -12,7 +12,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    age = Column(String)
+    age = Column(Integer)
     
 Base.metadata.create_all(engine)
 
